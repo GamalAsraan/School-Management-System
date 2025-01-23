@@ -3,7 +3,7 @@
 This is a Student Management System built using ASP.NET Web Forms. It allows administrators to manage students, courses, and other school-related data.
 
 ## Features
-- Password-protected admin page.
+- Password-protected admin page = "0000".
 - Insert, view, and delete students and courses.
 - User-friendly interface.
 
