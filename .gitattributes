@@ -1,5 +1,5 @@
 # Force GitHub to recognize .aspx files as C#
-*.aspx linguist-language=C#
+*.aspx linguist-language=HTML
 *.aspx.cs linguist-language=C#
 *.aspx.designer.cs linguist-language=C#
 
