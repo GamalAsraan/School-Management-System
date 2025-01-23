@@ -22,7 +22,7 @@ This is a Student Management System built using ASP.NET Web Forms. It allows adm
 ## Website Preview
 
 ### Admin Login
-![Admin Login](StudentManagement/Images/Admin-Password-0000.png)
+![Admin Login](StudentManagement/Images/Admin-Password-0000.png.png)
 
 ### Admin - Insert Course
 ![Admin - Insert Course](StudentManagement/Images/Admin-Insert-Course.png)
