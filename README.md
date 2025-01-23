@@ -25,19 +25,19 @@ This is a Student Management System built using ASP.NET Web Forms. It allows adm
 ![Admin Login](StudentManagement/Images/Admin-Password-0000.png.png)
 
 ### Admin - Insert Course
-![Admin - Insert Course](StudentManagement/Images/Admin-Insert-Course.png)
+![Admin - Insert Course](StudentManagement/Images/Admin-Insert-Course.png.png)
 
 ### Admin - Delete Course
-![Admin - Delete Course](StudentManagement/Images/Admin-Delete-Course.png)
+![Admin - Delete Course](StudentManagement/Images/Admin-Delete-Course.png.png)
 
 ### Student - Add Course
-![Student - Add Course](StudentManagement/Images/Student-Add-Course.png)
+![Student - Add Course](StudentManagement/Images/Student-Add-Course.png.png)
 
 ### Student - Drop Course
-![Student - Drop Course](StudentManagement/Images/Student-Drop-Course.png)
+![Student - Drop Course](StudentManagement/Images/Student-Drop-Course.png.png)
 
 ### Sign Up Page
-![Sign Up Page](StudentManagement/Images/Sign-Up.png)
+![Sign Up Page](StudentManagement/Images/Sign-Up.png.png)
 
 ### Login Page
-![Login Page](StudentManagement/Images/Login.png)
+![Login Page](StudentManagement/Images/Login.png.png)
