@@ -170,7 +170,8 @@
                 <asp:Label ID="lblSignupPassword" runat="server" Text="Password"></asp:Label>
                 <asp:TextBox ID="txtSignupPassword" runat="server" TextMode="Password" placeholder="Choose a password"></asp:TextBox>
             </div>
-            <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" OnClick="btnSignUp_Click" CssClass="btn" />
+            <!-- Sign Up Button -->
+<asp:Button ID="btnSignUp" runat="server" Text="Sign Up" OnClick="btnSignUp_Click" CssClass="btn" />
             <asp:Label ID="lblSignupMessage" runat="server" CssClass="error-message"></asp:Label>
         </div>
 

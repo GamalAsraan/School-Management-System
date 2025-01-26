@@ -75,23 +75,10 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Panel ID="pnlLogin" runat="server" Visible="true">
-        <div class="section">
-            <h2>Admin Login</h2>
-            <div class="form-group">
-                <asp:Label runat="server" AssociatedControlID="txtAdminPassword">Password:</asp:Label>
-                <asp:TextBox ID="txtAdminPassword" runat="server" TextMode="Password"></asp:TextBox>
-            </div>
-            <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-primary" OnClick="btnLogin_Click" />
-            <asp:Label ID="lblLoginError" runat="server" CssClass="error-message"></asp:Label>
-        </div>
-    </asp:Panel>
-
-    <asp:Panel ID="pnlAdminContent" runat="server" Visible="false">
-        
+    <asp:Panel ID="pnlAdminContent" runat="server">
         <!-- Section 1: Welcome Message -->
         <div class="section">
-            <h2>Welcome, Gamal Asran</h2>
+            <h2>Welcome, Admin</h2>
         </div>
 
         <!-- Section 2: Insert New Course -->
@@ -100,14 +87,18 @@
             <div class="form-group">
                 <label for="txtCourseName">Course Name:</label>
                 <asp:TextBox ID="txtCourseName" runat="server" required="true"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvCourseName" runat="server" ControlToValidate="txtCourseName" ErrorMessage="Course name is required." Display="Dynamic" CssClass="error-message"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
                 <label for="txtInstructor">Instructor:</label>
                 <asp:TextBox ID="txtInstructor" runat="server" required="true"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvInstructor" runat="server" ControlToValidate="txtInstructor" ErrorMessage="Instructor is required." Display="Dynamic" CssClass="error-message"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
                 <label for="txtCredits">Credits:</label>
                 <asp:TextBox ID="txtCredits" runat="server" required="true" TextMode="Number"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvCredits" runat="server" ControlToValidate="txtCredits" ErrorMessage="Credits are required." Display="Dynamic" CssClass="error-message"></asp:RequiredFieldValidator>
+                <asp:RangeValidator ID="rvCredits" runat="server" ControlToValidate="txtCredits" Type="Integer" MinimumValue="1" MaximumValue="10" ErrorMessage="Credits must be between 1 and 10." Display="Dynamic" CssClass="error-message"></asp:RangeValidator>
             </div>
             <asp:Button ID="btnInsertCourse" runat="server" Text="Insert Course" CssClass="btn btn-primary" OnClick="btnInsertCourse_Click" />
             <asp:Label ID="lblMessage" runat="server" CssClass="error-message"></asp:Label>

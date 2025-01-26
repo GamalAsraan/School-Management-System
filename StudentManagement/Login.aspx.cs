@@ -14,10 +14,18 @@ namespace StudentManagement
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
+            // Admin login check
+            if (username == "admin" && password == "0000")
+            {
+                Session["AdminAuthenticated"] = true;
+                Response.Redirect("~/Admin.aspx");
+                return;
+            }
+
+            // Student login logic
             string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Data.mdf;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                // Fetch the password and StudentID for the given username
                 SqlCommand cmd = new SqlCommand("SELECT Password, StudentID FROM Student WHERE Username = @Username", conn);
                 cmd.Parameters.AddWithValue("@Username", username);
                 conn.Open();
@@ -30,11 +38,8 @@ namespace StudentManagement
 
                     if (dbPassword == password)
                     {
-                        // Store the StudentID in the session
                         Session["StudentID"] = studentID;
-
-                        // Redirect to the Profile page
-                        Response.Redirect("Profile.aspx");
+                        Response.Redirect("~/Profile.aspx");
                     }
                     else
                     {

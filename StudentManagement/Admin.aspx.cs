@@ -12,61 +12,46 @@ namespace StudentManagement
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Redirect to login if not authenticated
+            if (Session["AdminAuthenticated"] == null || !(bool)Session["AdminAuthenticated"])
+            {
+                Response.Redirect("~/Login.aspx");
+            }
+
+            // Bind GridView on initial load
             if (!IsPostBack)
             {
-                if (Session["AdminAuthenticated"] != null && (bool)Session["AdminAuthenticated"])
-                {
-                    ShowAdminContent();
-                    BindGridView();
-                }
-            }
-        }
-
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            if (txtAdminPassword.Text == "0000") // Using your existing password
-            {
-                Session["AdminAuthenticated"] = true;
-                Session["AdminPassword"] = "0000";  // Maintain compatibility with existing code
-                ShowAdminContent();
                 BindGridView();
             }
-            else
-            {
-                lblLoginError.Text = "Invalid password. Please try again.";
-            }
-        }
-
-        private void ShowAdminContent()
-        {
-            pnlLogin.Visible = false;
-            pnlAdminContent.Visible = true;
         }
 
         // Insert Course
         protected void btnInsertCourse_Click(object sender, EventArgs e)
         {
-            try
+            if (Page.IsValid)
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                try
                 {
-                    string query = "INSERT INTO Course (CourseName, Instructor, Credits) VALUES (@CourseName, @Instructor, @Credits)";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@CourseName", txtCourseName.Text);
-                    cmd.Parameters.AddWithValue("@Instructor", txtInstructor.Text);
-                    cmd.Parameters.AddWithValue("@Credits", int.Parse(txtCredits.Text));
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    lblSuccess.Text = "Course inserted successfully!";
-                    lblMessage.Text = "";
-                    BindGridView(); // Refresh the GridView
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        string query = "INSERT INTO Course (CourseName, Instructor, Credits) VALUES (@CourseName, @Instructor, @Credits)";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@CourseName", txtCourseName.Text);
+                        cmd.Parameters.AddWithValue("@Instructor", txtInstructor.Text);
+                        cmd.Parameters.AddWithValue("@Credits", int.Parse(txtCredits.Text));
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        lblSuccess.Text = "Course inserted successfully!";
+                        lblMessage.Text = "";
+                        BindGridView(); // Refresh the GridView
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                lblMessage.Text = "Error: " + ex.Message;
-                lblSuccess.Text = "";
+                catch (Exception ex)
+                {
+                    lblMessage.Text = "An error occurred. Please try again later.";
+                    lblSuccess.Text = "";
+                }
             }
         }
 
@@ -103,7 +88,7 @@ namespace StudentManagement
                 }
                 catch (Exception ex)
                 {
-                    lblMessage.Text = "Error: " + ex.Message;
+                    lblMessage.Text = "An error occurred. Please try again later.";
                     lblSuccess.Text = "";
                 }
             }

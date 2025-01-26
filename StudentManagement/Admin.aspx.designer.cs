@@ -15,42 +15,6 @@ namespace StudentManagement
     {
 
         /// <summary>
-        /// pnlLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlLogin;
-
-        /// <summary>
-        /// txtAdminPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAdminPassword;
-
-        /// <summary>
-        /// btnLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
-
-        /// <summary>
-        /// lblLoginError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLoginError;
-
-        /// <summary>
         /// pnlAdminContent control.
         /// </summary>
         /// <remarks>
@@ -69,6 +33,15 @@ namespace StudentManagement
         protected global::System.Web.UI.WebControls.TextBox txtCourseName;
 
         /// <summary>
+        /// rfvCourseName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCourseName;
+
+        /// <summary>
         /// txtInstructor control.
         /// </summary>
         /// <remarks>
@@ -78,6 +51,15 @@ namespace StudentManagement
         protected global::System.Web.UI.WebControls.TextBox txtInstructor;
 
         /// <summary>
+        /// rfvInstructor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvInstructor;
+
+        /// <summary>
         /// txtCredits control.
         /// </summary>
         /// <remarks>
@@ -85,6 +67,24 @@ namespace StudentManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCredits;
+
+        /// <summary>
+        /// rfvCredits control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCredits;
+
+        /// <summary>
+        /// rvCredits control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvCredits;
 
         /// <summary>
         /// btnInsertCourse control.
