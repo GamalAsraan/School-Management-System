@@ -43,5 +43,4 @@ This is a Student Management System built using ASP.NET Web Forms. It allows adm
 ### Student - Drop Course
 ![Student - Drop Course](StudentManagement/Images/Student-Drop-Course.png.png)
 
-=======
->>>>>>> parent of 099e73b (Added preview images README.md)
+
