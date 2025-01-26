@@ -128,7 +128,7 @@
                         <ItemTemplate>
                             <asp:Button runat="server" CommandName="DeleteCourse" Text="Delete" 
                                       CssClass="btn btn-danger" CommandArgument='<%# Eval("CourseID") %>'
-                                      OnClientClick="return confirm('Are you sure you want to delete this course?');" />
+                                      OnClientClick="return confirm('Are you sure you want to delete this course and all related student records?');" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

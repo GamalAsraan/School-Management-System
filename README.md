@@ -18,6 +18,7 @@ This is a Student Management System built using ASP.NET Web Forms. It allows adm
 2. Open the project in Visual Studio.
 3. Set up the database (update the connection string in `Web.config`).
 4. Run the project.
+<<<<<<< HEAD
 
 ## Website Preview
 
@@ -42,3 +43,5 @@ This is a Student Management System built using ASP.NET Web Forms. It allows adm
 ### Student - Drop Course
 ![Student - Drop Course](StudentManagement/Images/Student-Drop-Course.png.png)
 
+=======
+>>>>>>> parent of 099e73b (Added preview images README.md)

@@ -80,13 +80,23 @@ namespace StudentManagement
                 {
                     using (SqlConnection conn = new SqlConnection(connectionString))
                     {
-                        string query = "DELETE FROM Course WHERE CourseID = @CourseID";
-                        SqlCommand cmd = new SqlCommand(query, conn);
-                        cmd.Parameters.AddWithValue("@CourseID", courseID);
                         conn.Open();
-                        cmd.ExecuteNonQuery();
+
+                        // Step 1: Delete related records in the StudentCourse table
+                        string deleteStudentCourseQuery = "DELETE FROM StudentCourse WHERE CourseID = @CourseID";
+                        SqlCommand deleteStudentCourseCmd = new SqlCommand(deleteStudentCourseQuery, conn);
+                        deleteStudentCourseCmd.Parameters.AddWithValue("@CourseID", courseID);
+                        deleteStudentCourseCmd.ExecuteNonQuery();
+
+                        // Step 2: Delete the course from the Course table
+                        string deleteCourseQuery = "DELETE FROM Course WHERE CourseID = @CourseID";
+                        SqlCommand deleteCourseCmd = new SqlCommand(deleteCourseQuery, conn);
+                        deleteCourseCmd.Parameters.AddWithValue("@CourseID", courseID);
+                        deleteCourseCmd.ExecuteNonQuery();
+
                         conn.Close();
-                        lblSuccess.Text = "Course deleted successfully!";
+
+                        lblSuccess.Text = "Course and related student records deleted successfully!";
                         lblMessage.Text = "";
                         BindGridView(); // Refresh the GridView
                     }
